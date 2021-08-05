@@ -1,0 +1,43 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    History
+
+{% endblock %}
+
+{% block main %}
+   
+</table>
+<div class="container">
+	
+	<div class="table">
+		<div class="table-header">
+			<div class="header__item"><a id="name" class="filter__link" href="#">Symbol</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Shares</a></div>
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Price</a></div>
+						<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Transaction Type</a></div>
+
+    			<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Time of Transaction</a></div>
+		</div>
+		 {% for stock in stocks %}
+		<div class="table-content">	
+			<div class="table-row">		
+				<div class="table-data">            {{ stock.symbol }}
+</div>
+				<div class="table-data">            {{ stock.nos }}
+</div>
+				<div class="table-data">            ${{ stock.price }}
+</div>
+				<div class="table-data">            {{ stock.typ }}
+</div>
+<div class="table-data">            {{ stock.time }}
+</div>
+			</div>
+			</div>
+			      {% endfor %}
+
+		
+
+		</div>	
+	</div>
+{% endblock %}
